@@ -1,3 +1,18 @@
-<p>
-  search works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 form-group">
+      <br>
+      <label for="termino">Buscar por artista:</label>
+      <input class="form-control" type="text" [(ngModel)]="termino" name="termino" placeholder="Buscar..." (keyup)="handleSearch()">
+    </div>
+  </div>
+  <h1 class="text-center">{{ termino }}</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let artist of artists">
+      <img class="img-responsive img-thumbnail" [src]="(artist.images.length > 1) ? artist.images[1].url : 'assets/img/noimage.png'" alt="artist.name">
+      <p>{{ artist.name }}</p>
+      <hr>
+    </div>
+  </div>
+</div>

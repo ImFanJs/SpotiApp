@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 // Routes
 import { APP_ROUTING } from './app.routes';
 
+// Services
+import { SpotifyService } from './services/spotify.service';
+
 
 // Components
 import { AppComponent } from './app.component';
@@ -26,7 +29,9 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     HttpModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    SpotifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
