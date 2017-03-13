@@ -10,7 +10,7 @@
   <hr>
   <div class="row">
     <div [routerLink]="['/artist/', artist.id]" class="col-md-4 puntero" *ngFor="let artist of artists">
-      <img class="img-responsive img-thumbnail" [src]="(artist.images.length > 1) ? artist.images[1].url : 'assets/img/noimage.png'" alt="artist.name">
+      <img class="img-responsive img-thumbnail" [src]="artist.images |sinfoto" alt="artist.name">
       <p>{{ artist.name }}</p>
       <hr>
     </div>
